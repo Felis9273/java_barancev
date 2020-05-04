@@ -15,7 +15,6 @@ public class ContactCreationTest {
   public void setUp() throws Exception {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    wd.get("http://localhost/addressbook/group.php");
     login("admin", "secret");
   }
 
@@ -74,6 +73,7 @@ public class ContactCreationTest {
   }
 
   private void login(String username, String password) {
+    wd.get("http://localhost/addressbook/group.php");
     wd.findElement(By.xpath("//body")).click();
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
