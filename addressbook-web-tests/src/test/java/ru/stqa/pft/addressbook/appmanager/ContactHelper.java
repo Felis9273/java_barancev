@@ -36,4 +36,25 @@ public class ContactHelper extends HelperBase{
       wd.findElement(By.linkText("add new")).click();
     }
 
+
+
+  public void closeInformationPopUp() {
+    wd.switchTo().alert().accept();
+  }
+
+  public void deleteContact(String s) {
+    wd.findElement(By.xpath(s)).click();
+  }
+
+  public void selectContact(String xpathExpression) {
+    wd.findElement(By.xpath(xpathExpression)).click();
+  }
+
+  public void editContact(String editButtonLocator) {
+    wd.findElement(By.xpath(editButtonLocator)).click();
+  }
+
+  public void confirmContactModification(String xpathExpression) {
+    wd.findElement(By.xpath(xpathExpression)).click();
+  }
 }

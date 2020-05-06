@@ -14,4 +14,8 @@ public class SessionHelper extends HelperBase {
     type(By.name("pass"),password);
     click(By.xpath("//input[@value='Login']"));
   }
+
+  public void goToHomePage(String text) {
+    wd.findElement(By.linkText(text)).click();
+  }
 }
