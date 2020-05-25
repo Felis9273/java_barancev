@@ -4,24 +4,20 @@ import org.testng.annotations.BeforeMethod;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 
-public class TestBase extends ApplicationManager{
+public class TestBase extends ApplicationManager {
 
   protected final ApplicationManager app = new ApplicationManager();
-  protected boolean acceptNextAlert = true;
 
-  @BeforeMethod(alwaysRun = true)
-  public void setUp() throws Exception {
+
+  @BeforeMethod
+  public void setUp() {
     app.init();
   }
 
-  @AfterMethod(alwaysRun = true)
-  public void tearDown() throws Exception {
+  @AfterMethod
+  public void tearDown() {
     app.stop();
 
   }
-
-  public ApplicationManager getApp() {
-    return app;
-  }
-
 }
+
