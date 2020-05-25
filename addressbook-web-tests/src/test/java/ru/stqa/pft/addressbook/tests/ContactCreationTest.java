@@ -7,9 +7,8 @@ public class ContactCreationTest  extends TestBase{
 
   @Test
   public void testContactCreation() {
-    app.getContactHelper().initContactCreation();
-    app.getContactHelper().fillContactForm(new ContactData("John", "Smith", "Alex", "T-Systems RUS", "13 linia V.O 14", "+7888888888", "3", "March", "1983", "test1", "test3434"), true);
-    app.getContactHelper().submitContactCreation();
+    //TODO: Добавить проверку предусловий для тестов на удаление и модификацию контактов
+    app.getContactHelper().createContact(new ContactData("John", "Smith", "Alex", "T-Systems RUS", "13 linia V.O 14", "+7888888888", "3", "March", "1983", "test1", "test3434"));
   }
 
 

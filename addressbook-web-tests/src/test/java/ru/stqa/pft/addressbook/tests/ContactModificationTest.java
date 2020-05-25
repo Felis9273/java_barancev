@@ -8,7 +8,11 @@ public class ContactModificationTest extends TestBase {
 
   @Test
   public void testContactModification(){
-      app.getContactHelper().editContact("//td[8]//a[1]");
+     if (!app.getContactHelper().isThereAContact()){
+      app.getContactHelper().createContact(new ContactData("test1","test2","test3","ertert","ertet","+7888888888", "3", "March", "1983", "test1", "test3434"));
+    }
+      app.getNavigationHelper().goToHomePage();
+      app.getContactHelper().editContact();
       app.getContactHelper().fillContactForm(new ContactData("Mario", "Plummer", "Mario", "T-Systems Slovakia", "dfsfdsdfd", "+7888888888", "10", "March", "1965", "test1",null),false);
       app.getContactHelper().confirmContactModification("//input[22]");
 

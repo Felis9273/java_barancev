@@ -19,11 +19,12 @@ public class NavigationHelper extends HelperBase {
   }
             click(By.linkText("groups"));
   }
-  public void goToHomePage(String text) {
-    if (isElementPresent(By.id("maintable"))){
-      return;
-    }
-    wd.findElement(By.linkText(text)).click();
+  public void goToHomePage() {
+  // if (isElementPresent(By.id("MainForm"))){
+ //    return;
+//   }
+
+    click(By.linkText("home"));
   }
 
 }

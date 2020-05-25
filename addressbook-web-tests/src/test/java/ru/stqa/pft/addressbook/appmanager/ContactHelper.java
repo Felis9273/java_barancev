@@ -58,11 +58,22 @@ public class ContactHelper extends HelperBase{
     wd.findElement(By.xpath(xpathExpression)).click();
   }
 
-  public void editContact(String editButtonLocator) {
-    wd.findElement(By.xpath(editButtonLocator)).click();
+  public void editContact() {
+    wd.findElement(By.xpath("//td[8]/a/img")).click();
   }
 
   public void confirmContactModification(String xpathExpression) {
     wd.findElement(By.xpath(xpathExpression)).click();
+  }
+
+  public void createContact(ContactData contact) {
+    initContactCreation();
+    fillContactForm(contact,true);
+    submitContactCreation();
+
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.xpath("//tr[2]//td[1]"));
   }
 }
